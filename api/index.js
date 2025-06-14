@@ -13,9 +13,9 @@ export default async function handler(req, res) {
       vercel_performance:
         "Vercel serverless functions are globally distributed and auto-scale instantly, providing very fast cold starts and low latency compared to traditional servers. This makes Vercel ideal for modern, scalable APIs.",
       deployment_best_practices:
-        "Avoid deploying traditional Node.js apps (using Express and app.listen) on Vercel. Vercel is designed for serverless functions, not long-running servers. Deploying traditional servers can cause errors like timeouts, port binding failures, and memory leaks, as Vercel does not support persistent server processes. Always use the serverless function pattern (export default handler) for backend APIs on Vercel.",
+        "Avoid deploying traditional Node.js apps (using Express and app.listen) on Vercel. Vercel is designed for serverless functions, not long-running servers. Deploying traditional servers can cause errors like timeouts, port binding failures, memory leaks, and 404 API errors, as Vercel does not support persistent server processes or custom routing. Always use the serverless function pattern (export default handler) for backend APIs on Vercel.",
       common_errors_and_consequences:
-        "Common issues when deploying traditional Node.js apps on Vercel include: 'Cannot bind to port', 'Timeout exceeded', and 'Process exited unexpectedly'. These occur because Vercel expects each API file to export a handler, not to start a server. For best results, follow Vercel's serverless architecture and avoid using frameworks that require persistent servers unless they support serverless mode.",
+        "Common issues when deploying traditional Node.js apps on Vercel include: 'Cannot bind to port', 'Timeout exceeded', 'Process exited unexpectedly', and unexpected 404 errors on API routes. These occur because Vercel expects each API file to export a handler, not to start a server. For best results, follow Vercel's serverless architecture and avoid using frameworks that require persistent servers unless they support serverless mode.",
     });
   } catch (error) {
     console.log(error);
