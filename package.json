@@ -1,0 +1,19 @@
+{
+  "name": "vercel-backend",
+  "version": "1.0.0",
+  "description": "Vercel Backend",
+  "keywords": [
+    "vercel",
+    "backend"
+  ],
+  "license": "ISC",
+  "author": "Viral Vaghela",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
